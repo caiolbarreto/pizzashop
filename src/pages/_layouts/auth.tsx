@@ -12,7 +12,7 @@ export function AuthLayout() {
         <footer>Partner panel &copy; pizza.shop</footer>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="relative flex items-center justify-center">
         <Outlet />
       </div>
     </div>
