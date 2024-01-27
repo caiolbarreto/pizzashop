@@ -13,6 +13,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
+import { OrderTableSkeleton } from './order.table-skeleton'
 import { OrderTableFilters } from './order-table-filters'
 import { OrderTableRow } from './order-table-row'
 
@@ -64,10 +65,13 @@ export function Orders() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {result &&
+                {result ? (
                   result.orders.map((order) => {
                     return <OrderTableRow key={order.orderId} order={order} />
-                  })}
+                  })
+                ) : (
+                  <OrderTableSkeleton />
+                )}
               </TableBody>
             </Table>
           </div>
